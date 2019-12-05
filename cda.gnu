@@ -1,5 +1,5 @@
 #!/bin/gnuplot
-set terminal postscript eps enhanced "Palatino" 12
+set term postscript enhanced color "Palatino" 12
 set encoding utf8
 #set xtics rotate by 25 offset -1,-2
 set grid ytics lt 0 lw 1 lc rgb "#bbbbbb"
@@ -44,10 +44,10 @@ set style line 21 lt 1 lw lw1 pt 6 ps ps2 lc rgb "black"
 set style line 99 lt 1.2 lw 1 lc rgb "#D8BFD8"
 #set style line 99 lt 1.2 lw 1 lc rgb "#ff6666"
 
-yi=-0.1
-yf=0.6
+yi=-0.05
+yf=0.30
 
-set xrange[-6:12]
+set xrange[-20.0:13.0]
 set yrange[yi:yf]
 #set arrow nohead lt 2 from 2.4,-0.1 to 2.4,0.4
 #set arrow nohead lt 2 from 2.925,-0.1 to 2.925,0.4
@@ -56,63 +56,18 @@ set ylabel "{/Symbol D}{/Palatino-Italic q}({/Palatino-Italic z}) /e"
 
 set key samplen 1.5
 
-xconv=0.52918
+xconv=1
 
-set output "../data/prova/cucn/cucn_cda.eps"
-set arrow nohead lt 1 from 1.85,yi to 1.85,yf
-set key top right Left reverse box title "{/Palatino-Bold Cu-CN}"
+set output "cda.eps"
+set arrow nohead lt 1 from 2.85,yi to 2.85,yf
+set key top left reverse box title "{/Palatino-Bold Ag_{20}-Og}"
 plot \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-drho.dsv" u 1:2 w l ls 1 title "{/Symbol D}{/Symbol-Oblique r}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-drho0.dsv" u 1:2 w l ls 2 title "{/Symbol D}{/Symbol-Oblique r}'", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-pair.00001.dsv" u 1:($2*2) w l ls 11 title "{/Symbol D}{/Symbol-Oblique r}'_{1:2}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-pair.00005.dsv" u 1:($2*2) w l ls 12 title "{/Symbol D}{/Symbol-Oblique r}'_{3:4}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-pair.00011.dsv" u 1:($2*2) w l ls 13 title "{/Symbol D}{/Symbol-Oblique r}'_{5:6}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-pair.00009.dsv" u 1:($2*2) w l ls 14 title "{/Symbol D}{/Symbol-Oblique r}'_{7:8}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-pair.00021.dsv" u 1:($2*2) w l ls 15 title "{/Symbol D}{/Symbol-Oblique r}'_{9:10}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/fit-pair.00019.dsv" u 1:($2*2) w l ls 16 title "{/Symbol D}{/Symbol-Oblique r}'_{11:12}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/paste.dsv" u 1:($2*2+$5*2+$8*2+$11*2+$14*2+$17*2) w p ls 21 title "{/Symbol D}{/Symbol-Oblique r}'_{1:12}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/cucn/cucn.xyz" u ($4/xconv):($3*0) w p pt 7 ps 0.5 notitle \
+"./full" u 1:2 w l ls 2 title "{/Symbol D}{/Symbol-Oblique r}'", \
+"./fit-pair.26399.dsv" u 1:($2*2) w l ls 11 title "{/Symbol D}{/Symbol-Oblique r}'_{1}", \
+"./fit-pair.26397.dsv" u 1:($2*2) w l ls 12 title "{/Symbol D}{/Symbol-Oblique r}'_{2}", \
+"./fit-pair.26395.dsv" u 1:($2*2) w l ls 13 title "{/Symbol D}{/Symbol-Oblique r}'_{3}", \
+"./fit-pair.26394.dsv" u 1:($2*2) w l ls 14 title "{/Symbol D}{/Symbol-Oblique r}'_{4}", \
+"./fit-pair.26391.dsv" u 1:($2*2) w l ls 15 title "{/Symbol D}{/Symbol-Oblique r}'_{5}", \
+"./fit-pair.26389.dsv" u 1:($2*2) w l ls 16 title "{/Symbol D}{/Symbol-Oblique r}'_{6}", \
+"./Au20Og.xyz" u ($4/xconv):($3*0) w p pt 7 ps 0.5 notitle \
 
-unset arrow
-set output "../data/prova/agcn/agcn_cda.eps"
-set arrow nohead lt 1 from 2.15,yi to 2.15,yf
-set key top right Left reverse box title "{/Palatino-Bold Ag-CN}"
-plot \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/drho.dsv" u 1:2 w l ls 1 title "{/Symbol D}{/Symbol-Oblique r}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/drho0.dsv" u 1:2 w l ls 2 title "{/Symbol D}{/Symbol-Oblique r}'", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/fit-pair.00001.dsv" u 1:($2*2) w l ls 11 title "{/Symbol D}{/Symbol-Oblique r}'_{1:2}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/fit-pair.00007.dsv" u 1:($2*2) w l ls 12 title "{/Symbol D}{/Symbol-Oblique r}'_{3:4}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/fit-pair.00009.dsv" u 1:($2*2) w l ls 13 title "{/Symbol D}{/Symbol-Oblique r}'_{5:6}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/fit-pair.00013.dsv" u 1:($2*2) w l ls 14 title "{/Symbol D}{/Symbol-Oblique r}'_{7:8}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/fit-pair.00017.dsv" u 1:($2*2) w l ls 15 title "{/Symbol D}{/Symbol-Oblique r}'_{9:10}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/fit-pair.00025.dsv" u 1:($2*2) w l ls 16 title "{/Symbol D}{/Symbol-Oblique r}'_{11:12}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/paste.dsv" u 1:($2*2+$5*2+$8*2+$11*2+$14*2+$17*2) w p ls 21 title "{/Symbol D}{/Symbol-Oblique r}'_{1:12}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/agcn/agcn.xyz" u ($4/xconv):($3*0) w p pt 7 ps 0.5 notitle \
-
-
-
-unset arrow
-set output "../data/prova/aucn/aucn_cda.eps"
-set arrow nohead lt 1 from 2.05,yi to 2.05,yf
-set key top right Left reverse box title "{/Palatino-Bold Au-CN}"
-plot \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/drho.dsv" u 1:2 w l ls 1 title "{/Symbol D}{/Symbol-Oblique r}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/drho0.dsv" u 1:2 w l ls 2 title "{/Symbol D}{/Symbol-Oblique r}'", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/fit-pair.00001.dsv" u 1:($2*2) w l ls 11 title "{/Symbol D}{/Symbol-Oblique r}'_{1:2}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/fit-pair.00006.dsv" u 1:($2*2) w l ls 12 title "{/Symbol D}{/Symbol-Oblique r}'_{3:4}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/fit-pair.00015.dsv" u 1:($2*2) w l ls 13 title "{/Symbol D}{/Symbol-Oblique r}'_{5:6}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/fit-pair.00009.dsv" u 1:($2*2) w l ls 14 title "{/Symbol D}{/Symbol-Oblique r}'_{7:8}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/fit-pair.00017.dsv" u 1:($2*2) w l ls 15 title "{/Symbol D}{/Symbol-Oblique r}'_{9:10}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/fit-pair.00025.dsv" u 1:($2*2) w l ls 16 title "{/Symbol D}{/Symbol-Oblique r}'_{11:12}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/paste.dsv" u 1:($2*2+$5*2+$8*2+$11*2+$14*2+$17*2) w p ls 21 title "{/Symbol D}{/Symbol-Oblique r}'_{1:12}", \
-"../nscv/production/aug-cc-pVTZ-DK_1.3_5_A22/aucn/aucn.xyz" u ($4/xconv):($3*0) w p pt 7 ps 0.5 notitle \
-
-
-
-
-#"../../../drafts/1401she/cube/au20pb/au20pb_cda.dsv" u ( $1>= 2.4 && $1<= 2.9 ? $1 : 1/0):(0.4):(-0.1) w filledcurves ls 99 notitle, \
-
-#"au_file.xyz" u ($2):($2*0):( \
-#					$1 == 79 ? "" : \
-#					$1 == 479 ? "" : \
-#						1/0) w labels font "Palatino, 10" point pt 7 ps 0.5 offset 0, -0.75 notitle, \
