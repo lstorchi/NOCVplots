@@ -1,0 +1,119 @@
+\documentclass[a4paper,11pt]{book} % Prepara un documento per carta A4, con un bel font grande
+
+\usepackage[english]{babel}
+%\usepackage{cmbright}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath}
+%\usepackage{bbold}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{grffile}
+\usepackage{array}
+\usepackage{footnote}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage{fp} % floating point calculations
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{etoolbox}
+\usepackage{listings}
+\usepackage{grffile}
+%\usepackage{minipage}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage[format=hang,singlelinecheck=0,font={sf,small},labelfont=it]{subfig}
+\usepackage{caption}
+%\usepackage[noabbrev]{cleveref}
+\captionsetup[subfigure]{subrefformat=simple,labelformat=simple,listofformat=subsimple}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+%\usepackage{tikz-3dplot}
+%\tdplotsetmaincoords{60}{110}
+%\usepackage{siunitx}
+\begin{document}
+\thispagestyle{empty}
+\begin{figure}
+\begin{pspicture}[showgrid=false](-11,-10)(7,10)
+%\psgrid
+\rput(-9,9){%
+\includegraphics[width=0.5\textwidth]{./fit-drho.png}
+ }
+\rput[B](-9,7){$\Delta \rho$}
+\rput[B](-3.5,7){$\Delta \rho^{\mathrm{anti}}$}
+\rput[B](2,7){$\Delta \rho'$}
+\rput(-3.5,9){%
+\includegraphics[width=0.5\textwidth]{./fit-drhoanti.png}
+ }
+ \rput(2,9){%
+\includegraphics[width=0.5\textwidth]{./fit-drho0.png}
+ }
+
+ \rput(-9,4.5){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv-.04580.png}
+ }
+\rput(-3.5,4.5){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv+.04580.png}
+ }
+ \rput(2,4.5){%
+\includegraphics[width=0.5\textwidth]{./fit-pair.04580.png}
+ }
+\rput[B](-9,2.5){$|\varphi_{-1}|^2$}
+\rput[B](-3.5,2.5){$|\varphi_{+1}|^2$}
+\rput[B](2,2.5){$\Delta \rho'_1$}
+ \rput(-9,0){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv-.04578.png}
+ }
+\rput(-3.5,0){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv+.04578.png}
+ }
+ \rput(2,0){%
+\includegraphics[width=0.5\textwidth]{./fit-pair.04578.png}
+ }
+
+\rput[B](-9,-2){$|\varphi_{-2}|^2$}
+\rput[B](-3.5,-2){$|\varphi_{+2}|^2$}
+\rput[B](2,-2){$\Delta \rho'_2$}
+ \rput(-9,-4){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv-.04576.png}
+ }
+\rput(-3.5,-4){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv+.04576.png}
+ }
+ \rput(2,-4){%
+\includegraphics[width=0.5\textwidth]{./fit-pair.04576.png}
+ }
+ \rput[B](-9,-6){$|\varphi_{-3}|^2$}
+\rput[B](-3.5,-6){$|\varphi_{+3}|^2$}
+\rput[B](2,-6){$\Delta \rho'_3$}
+ \rput(-9,-8){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv-.04574.png}
+ }
+\rput(-3.5,-8){%
+\includegraphics[width=0.5\textwidth]{./fit-nocv+.04574.png}
+ }
+ \rput(2,-8){%
+\includegraphics[width=0.5\textwidth]{./fit-pair.04574.png}
+ }
+  \rput[B](-9,-10){$|\varphi_{-4}|^2$}
+\rput[B](-3.5,-10){$|\varphi_{+4}|^2$}
+\rput[B](2,-10){$\Delta \rho'_4$}
+%\rput(3,3.5){%
+%  \includegraphics%
+%    [width=0.4\linewidth]%
+%     {img/fit-drho.png}
+%     
+% } 
+% \rput[B](3.0,2.0){\tiny $\rho^{(AB)} - \rho^{(A)} -\rho^{(A)}$}
+% \rput[B](3.0,1.6){\tiny $\Delta \rho$}
+%\rput[B](3,0.8){Charge Displacement Function }
+% \rput[B](2.8,-0.2){$\Delta q(z) = \int_{-\infty}^{z} dz' \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \Delta \rho(x,y,z') dx dy$  }
+ \end{pspicture}
+\end{figure}
+
+\end{document}
+~                              
